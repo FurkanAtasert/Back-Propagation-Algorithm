@@ -1,6 +1,6 @@
 ######## HIZLI İŞLEM SAĞLAMANIZ ADINA kütüphane import alanı########
 
-# pip install numpy matplotlib pandas scipy
+# pip install numpy matplotlib pandas scipy openpyxl
 
 ######## HIZLI İŞLEM SAĞLAMANIZ ADINA proje çalıştırma alanı ########
 
@@ -16,7 +16,7 @@ from scipy import stats
 
 
 # Veri setini yükle
-data = pd.read_excel("ornek_veriseti1.xlsx", sheet_name="Clear_Data")
+data = pd.read_excel("simple-dataset.xlsx", sheet_name="Clear_Data")
 
 # Sigmoid aktivasyon fonksiyonu
 def relu(x):
@@ -97,8 +97,8 @@ class NeuralNetwork:
         return self.forward(X_test)
 
 # Veri setinin yüklenmesi ve girdi ve hedef verilerin ayrılması
-X = data.drop(columns=["yas"]).values
-y = data["yas"].values.reshape(-1, 1)
+X = data.drop(columns=["Age"]).values
+y = data["Age"].values.reshape(-1, 1)
 
 # Model oluşturma ve eğitme (GİZLİ KATMAN OLUŞTURMA) 
 #Epochs yani eğitim sayısını arttırılabilir fakat overfittinge sebep olabileceği için 1000 defa yapılmıştır. Learning_rate aralığı daha düşük tutularak modelin öğrenme aşamasını iyileştirdim.
