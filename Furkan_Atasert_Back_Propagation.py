@@ -101,8 +101,6 @@ X = data.drop(columns=["Age"]).values
 y = data["Age"].values.reshape(-1, 1)
 
 # Model oluşturma ve eğitme (GİZLİ KATMAN OLUŞTURMA) 
-#Epochs yani eğitim sayısını arttırılabilir fakat overfittinge sebep olabileceği için 1000 defa yapılmıştır. Learning_rate aralığı daha düşük tutularak modelin öğrenme aşamasını iyileştirdim.
-# Toplam 15004 adet veri bulunduğu için 1000 defa eğitilmesini tercih ettim.
 nn = NeuralNetwork([X.shape[1], 16, 8, 4, 1])
 nn.fit(X, y, epochs=1000, learning_rate=0.0001)
 
